@@ -34,15 +34,15 @@
 <span id="cell12" class="cell " style="left:15.34722%;top:74.69136%;width:6.25000%;height:11.11111%;" aria-label="クロスワード 13マス目"></span>
 <span id="cell13" class="cell " style="left:15.34722%;top:86.04938%;width:6.25000%;height:11.11111%;" aria-label="クロスワード 14マス目"></span>
 </div></div>
-<p class="note">下の<strong>タテ・ヨコのカギの入力欄</strong>に、答えをひらがなで入力してね。入力した文字が上のクロスワードに反映されます。<strong>Cのマスのみ</strong>濁点を外して表示します（入力欄の文字は変わりません）。</p>
+
 <div class="in-words" id="wordInputs">
- <h3>カギの答えを入力しよう！</h3>
- <p class="inputguide">ひらがなで入力してください。交差するマスにも反映されます。</p>
- <div class="wordgroup"><h4>タテのカギ</h4><div class="wordgrid">
+
+
+ <div class="wordgroup"><h4>縦のヒント</h4><div class="wordgrid">
   <label>① 普段、小4の体操に参加している学教の人（5マス）<input id="v1" data-word="v1" lang="ja" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ひらがなで入力" maxlength="5"></label>
   <label>② あだ名が小麦の妖精のサンリオのキャラクターに由来してる人（3マス）<input id="v2" data-word="v2" lang="ja" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ひらがなで入力" maxlength="3"></label>
  </div></div>
- <div class="wordgroup"><h4>ヨコのカギ</h4><div class="wordgrid">
+ <div class="wordgroup"><h4>横のヒント</h4><div class="wordgrid">
   <label>① ペンギンが大好きな3年生（3マス）<input id="h1" data-word="h1" lang="ja" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ひらがなで入力" maxlength="3"></label>
   <label>② 今年三宅島に行った英語科の人（4マス）<input id="h2" data-word="h2" lang="ja" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ひらがなで入力" maxlength="4"></label>
   <label>③ 身長151CMで国教の4年生（3マス）<input id="h3" data-word="h3" lang="ja" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ひらがなで入力" maxlength="3"></label>
@@ -89,7 +89,7 @@ wordInputs.forEach(el=>{
     renderCrossword();
   });
 });
-function check(){const t=document.getElementById('station').value.normalize('NFKC').replace(/[\s　]/g,'').replace(/駅$/,'');const correct=['六本木','ろっぽんぎ','ロッポンギ'].includes(t);const out=document.getElementById('result');if(correct){out.className='result ok';out.textContent='🎉 正解！ もう1人の4年生を探しに六本木駅へ行こう！ 🚃'}else{out.className='result error';out.textContent=t?'おしい！ ヒントをもう一度確認してみよう！':'駅名を入力してね！'}}
+function check(){const t=document.getElementById('station').value.normalize('NFKC').replace(/[\s　]/g,'').replace(/駅$/,'');const correct=['六本木','ろっぽんぎ','ロッポンギ'].includes(t);const out=document.getElementById('result');if(correct){out.className='result ok';out.textContent='🎉 正解！ もう1人の4年生を探しに六本木駅に行こう！ 🚃'}else{out.className='result error';out.textContent=t?'おしい！ ヒントをもう一度確認してみよう！':'駅名を入力してね！'}}
 document.getElementById('check').onclick=check;
 document.getElementById('station').addEventListener('keydown',e=>{if(e.key==='Enter')check()});
 document.getElementById('station').addEventListener('input',()=>{document.getElementById('result').textContent='' });
