@@ -102,7 +102,7 @@ wordInputs.forEach(el=>{
     renderCrossword();
   });
 });
-function check(){const t=document.getElementById('station').value.normalize('NFKC').replace(/[\s　]/g,'').replace(/駅$/,'');const correct=['六本木','ろっぽんぎ','ロッポンギ'].includes(t);const out=document.getElementById('result');if(correct){out.className='result ok';out.textContent='🎉 正解！ 六本木駅！ では、もう1人の4年生を探しに行こう！ 🚃'}else{out.className='result error';out.textContent=t?'おしい！ ヒントをもう一度確認してみよう！':'駅名を入力してね！'}}
+function check(){const t=document.getElementById('station').value.normalize('NFKC').replace(/[\s　]/g,'').replace(/駅$/,'');const correct=['六本木','ろっぽんぎ','ロッポンギ'].includes(t);const out=document.getElementById('result');if(correct){out.className='result ok';out.textContent='🎉 正解！もう1人の4年生を探しに六本木駅に行こう！ 🚃'}else{out.className='result error';out.textContent=t?'おしい！ ヒントをもう一度確認してみよう！':'駅名を入力してね！'}}
 document.getElementById('check').onclick=check;
 document.getElementById('station').addEventListener('keydown',e=>{if(e.key==='Enter')check()});
 document.getElementById('station').addEventListener('input',()=>{document.getElementById('result').textContent='' });
